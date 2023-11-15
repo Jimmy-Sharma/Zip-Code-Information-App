@@ -23,36 +23,25 @@ const LocationInformationDisplayer = ({ postalCode }) => {
                 setIsData(true);
                 setLoading(false);
                 toast({
-                    title: 'Data Fetched Successfully',
-                    description: `Data has been retrieved successfully for ${postalCode}`,
+                    title: `Data Fetched Successfully for ${postalCode}`,
                     status: 'success',
                     duration: 3000,
-                    isClosable: true,
                 });
             } catch (error) {
                 setLoading(false);
                 console.error('Error fetching data:', error);
                 setIsData(false);
-                setError('Error fetching data. Please check the postal code.');
+                setError('Error fetching data.');
                 toast({
-                    title: 'Error Fetching Data',
-                    description: 'Error fetching data. Please check the postal code.',
+                    title: 'Invalid Postal Code.',
                     status: 'error',
                     duration: 3000,
-                    isClosable: true,
                 });
             }
         };
 
         fetchData();
     }, [postalCode]);
-
-    let position = [22.3511148, 78.6677428];
-
-    if (locationData && locationData.places && locationData.places.length > 0) {
-        const { latitude, longitude } = locationData.places[0];
-        position = [latitude, longitude];
-    }
 
     return (
         <div className='containerLI'>
