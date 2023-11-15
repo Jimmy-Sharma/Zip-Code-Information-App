@@ -1,0 +1,46 @@
+.containerPC{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.formPC {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    background-color: rgba(44, 40, 40, 0.2);
+    gap: 20px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 40px 68px, rgba(0, 0, 0, 0.22) 0px 40px 68px;
+    border-radius: 10px;
+    backdrop-filter: blur(20px);
+}
+
+.inputPC {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.buttonPC {
+    width: 50%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.2);
+    color: #0496ff;
+    font-size: 18px;
+}
+
+.buttonPC:hover {
+    background: #ffffff;
+    color: #08151e;
+}
