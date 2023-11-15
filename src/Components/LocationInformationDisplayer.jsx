@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Loading from './Loading';
 import locationFound from '../Assets/locationFound.gif'
-import errorGif from "../Assets/error.gif"
 import { createStandaloneToast } from '@chakra-ui/react'
 import '../Styling/LocationInformationDisplayer.css'
 import '../Styling/Loading.css'
@@ -55,7 +54,9 @@ const LocationInformationDisplayer = ({ postalCode }) => {
                     </div>
                     <div className="locationDetailsLI">
                         <p>Place Name : {locationData.places[0]['place name']}</p>
-                        <p>State: {locationData.places[0].state}</p>
+                        <p>State: {locationData.places[0].state},{locationData.places[0]['state abbreviation']}</p>
+                        <p>Longitude: {locationData.places[0].longitude}</p>
+                        <p>Latitude: {locationData.places[0].latitude}</p>
                         <p>Country: {locationData.country}</p>
                     </div>
 
