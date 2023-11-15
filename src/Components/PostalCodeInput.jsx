@@ -1,20 +1,20 @@
 import { useState } from 'react';
 import '../Styling/PostalCodeInput.css'
 const PostalCodeInput = ({ onPostalCodeChange }) => {
-    const [postalCode, setPostalCode] = useState('');
+    const [postalCode, setPostalCode] = useState('')
 
     const handlePostalCode = (event) => {
-        setPostalCode(event.target.value);
+        setPostalCode(event.target.value)
     };
 
     const handleFormSubmit = (event) => {
-        event.preventDefault();
-        onPostalCodeChange(postalCode);
+        event.preventDefault()
+        onPostalCodeChange(postalCode)
     };
 
     const handleClear = () => {
-        setPostalCode('');
-        onPostalCodeChange('');
+        setPostalCode('')
+        onPostalCodeChange('')
     };
     return (
         <div>
