@@ -9,17 +9,14 @@ import '../Styling/Loading.css'
 const { ToastContainer, toast } = createStandaloneToast()
 const LocationInformationDisplayer = ({ postalCode }) => {
     const [loading, setLoading] = useState(true);
-    const [locationData, setLocationData] = useState(null);
-    const [isData, setIsData] = useState(true);
-    const [error, setError] = useState(null);
+    const [locationDetails, setLocationDetails] = useState();
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 setLoading(true);
                 const response = await axios.get(`https://api.zippopotam.us/IN/${postalCode}`);
-                setLocationData(response.data);
-                setIsData(true);
+                setLocationDetails(response.data);
                 setLoading(false);
                 toast({
                     title: `Data Fetched Successfully for ${postalCode}`,
@@ -28,9 +25,6 @@ const LocationInformationDisplayer = ({ postalCode }) => {
                 });
             } catch (error) {
                 setLoading(false);
-                console.error('Error fetching data:', error);
-                setIsData(false);
-                setError('Error fetching data.');
                 toast({
                     title: 'Invalid Postal Code.',
                     status: 'error',
@@ -47,17 +41,17 @@ const LocationInformationDisplayer = ({ postalCode }) => {
             <ToastContainer />
             {loading ? (
                 <Loading />
-            ) : isData ? (
+            ) : locationDetails && locationDetails.length!=0 ? (
                 <div className="locationLI">
                     <div className="errorLI">
                         <img src={locationFound} alt="" />
                     </div>
                     <div className="locationDetailsLI">
-                        <p>Place Name : {locationData.places[0]['place name']}</p>
-                        <p>State: {locationData.places[0].state},{locationData.places[0]['state abbreviation']}</p>
-                        <p>Longitude: {locationData.places[0].longitude}</p>
-                        <p>Latitude: {locationData.places[0].latitude}</p>
-                        <p>Country: {locationData.country}</p>
+                        <p>Place Name : {locationDetails.places[0]['place name']}</p>
+                        <p>State: {locationDetails.places[0].state},{locationDetails.places[0]['state abbreviation']}</p>
+                        <p>Longitude: {locationDetails.places[0].longitude}</p>
+                        <p>Latitude: {locationDetails.places[0].latitude}</p>
+                        <p>Country: {locationDetails.country}</p>
                     </div>
 
                 </div>

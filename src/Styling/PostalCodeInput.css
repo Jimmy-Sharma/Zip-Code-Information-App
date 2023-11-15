@@ -1,8 +1,9 @@
-.containerPC{
+.containerPC {
     width: 100%;
     display: flex;
     justify-content: center;
 }
+
 .formPC {
     width: 400px;
     display: flex;
