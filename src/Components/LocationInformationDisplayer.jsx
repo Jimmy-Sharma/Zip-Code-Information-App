@@ -41,7 +41,7 @@ const LocationInformationDisplayer = ({ postalCode }) => {
             <ToastContainer />
             {loading ? (
                 <Loading />
-            ) : locationDetails && locationDetails.length!=0 ? (
+            ) : locationDetails && locationDetails.length !== 0 ? (
                 <div className="locationLI">
                     <div className="errorLI">
                         <img src={locationFound} alt="" />
