@@ -3,5 +3,11 @@
   width: 100%;
   background-size: cover;
   background-position: center;
+  padding-top: 20px;
+  padding-bottom: 150px;
   height: 100vh;
+}
+.heading h1{
+  text-align: center;
+  color: #ffffff;
 }

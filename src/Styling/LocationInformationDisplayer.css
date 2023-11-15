@@ -13,10 +13,10 @@
 }
 
 .locationDetailsLI {
-  background-color: rgba(44, 40, 40, 0.2);
-  backdrop-filter: blur(20px);
+  background-color: transparent;
   padding: 20px;
   border: 1px solid #ffffff;
+  box-shadow: #ffffff 0px 140px 168px, #ffffff 0px 40px 68px;
   border-radius: 20px;
   color: #ffffff;
 }

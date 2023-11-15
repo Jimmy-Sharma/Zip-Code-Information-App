@@ -12,6 +12,9 @@ const App = () => {
 
   return (
     <div className='app'>
+      <div className='heading'>
+        <h1>Zip Code Information App</h1>
+      </div>
       <PostalCodeInput onPostalCodeChange={handlePostalCodeChange} />
       {postalCode && <LocationInformationDisplayer postalCode={postalCode} />}
     </div>
