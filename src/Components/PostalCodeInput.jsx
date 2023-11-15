@@ -12,27 +12,26 @@ const PostalCodeInput = ({ onPostalCodeChange }) => {
         onPostalCodeChange(postalCode);
     };
 
-    const handleClearData = () => {
+    const handleClear = () => {
         setPostalCode('');
         onPostalCodeChange('');
     };
-    return (<>
-        <div className='containerPC'>
-            <form onSubmit={handleFormSubmit} className='formPC'>
-                <input
-                    className='inputPC'
-                    type="number"
-                    placeholder="Enter Postal Code"
-                    value={postalCode}
-                    onChange={handlePostalCode}
-                />
-                <button className='buttonPC' type="submit">Submit</button>
-                <button className="buttonPC" onClick={handleClearData}>
-                    Clear Data
-                </button>
-            </form>
+    return (
+        <div>
+            <div className='containerPC'>
+                <form onSubmit={handleFormSubmit} className='formPC'>
+                    <input
+                        className='inputPC'
+                        type="number"
+                        placeholder="Enter Postal Code"
+                        value={postalCode}
+                        onChange={handlePostalCode}
+                    />
+                    <button className='buttonPC' type="submit">Search</button>
+                    <button className="buttonPC" onClick={handleClear}>Clear</button>
+                </form>
+            </div>
         </div>
-    </>
     );
 };
 

@@ -3,6 +3,17 @@ import axios from 'axios';
 import Loading from './Loading';
 import locationFound from '../Assets/locationFound.gif'
 import { createStandaloneToast } from '@chakra-ui/react'
+import {
+    Table,
+    Thead,
+    Tbody,
+    Tfoot,
+    Tr,
+    Th,
+    Td,
+    TableCaption,
+    TableContainer,
+} from '@chakra-ui/react'
 import '../Styling/LocationInformationDisplayer.css'
 import '../Styling/Loading.css'
 
@@ -53,7 +64,6 @@ const LocationInformationDisplayer = ({ postalCode }) => {
                         <p>Latitude: {locationDetails.places[0].latitude}</p>
                         <p>Country: {locationDetails.country}</p>
                     </div>
-
                 </div>
             ) : (
                 <div className='errorMSGLi'>
